@@ -1,0 +1,46 @@
+﻿.sideBar{
+    margin-right:5%;
+    margin-top:5%;
+    display: block;
+    float:left;
+}
+.sideBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    border: 1px solid #555;
+    font-size: 20px;
+    background-color: #fff;
+    float: left;
+    color:black;
+}
+
+.sideBarli a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration:none;
+    color:inherit;
+}
+
+.sideBar li {
+    text-align: center;
+    border-bottom: 1px solid #555555;
+}
+
+/* Change the link color on hover */
+.sideBar li a:hover {
+   color:white;
+   background-color:#046B99;
+   text-decoration:none;
+}
+
+.pageViewer{
+    display:block;
+    float:left;
+    margin-top:5%;
+    margin-right:auto;
+    width:auto;
+    border: 1px solid #555555;
+    padding:5%;
+}

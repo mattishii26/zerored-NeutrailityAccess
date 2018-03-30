@@ -34,7 +34,7 @@ namespace StateTemplateV5Beta.Controllers
             return View();
         }
 
-        public ActionResult Login()
+        public ActionResult AccountPageSuccess()
         {
             return View();
         }
