@@ -16,13 +16,13 @@
                         <div class="input-group-addon d-flex">
                             <i class="ca-gov-icon-person"></i>
                         </div>
-                        <input id="email" class="form-control" type="text" placeholder="Enter Your Email">
+                        <input id="email" name="userEmail" class="form-control" type="text" placeholder="Enter Your Email">
                     </div>
                     <div class="input-group m-t-md">
                         <div class="input-group-addon d-flex">
                             <i class="ca-gov-icon-key"></i>
                         </div>
-                        <input id="password" class="form-control" type="password" placeholder="Enter Your Password">
+                        <input id="password" name ="userPassword" class="form-control" type="password" placeholder="Enter Your Password">
                     </div>
 
                     <small id="email-feedback" class="feedback" style="display:none">Email not registered, please register to continue.</small>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="row m-t-md m-b-md text-center">
                     <div class="col-sm-offset-2 col-sm-8">
-                        <input type="submit" value="Log in" class="btn btn-lg btn-primary full-width" />
+                        <input type="submit" value="Log in" class="btn btn-lg btn-primary full-width" onclick="loginCheck();" />
                     </div>
                 </div>
                 <div class="row m-t-md text-center">
@@ -56,3 +56,11 @@
             </section>
         </div>
     </div>
+
+<script>
+
+    function loginCheck() {
+        alert("clicked!");
+    }
+
+</script>

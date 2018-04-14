@@ -404,13 +404,17 @@
     <Content Include="Views\Shared\modules\serp.cshtml" />
     <Content Include="Views\Shared\modules\search-results-standalone.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Structure.cshtml" />
+    <Content Include="Views\Home\AEIS.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\serp.cshtml" />
     <Content Include="Views\Home\AccountPageSuccess.cshtml" />
     <Content Include="Site1.Master" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_AccountLayout.cshtml" />
+    <Content Include="Views\Home\APS_AEIS.cshtml" />
+    <Content Include="Views\Home\APS_Graph.cshtml" />
+    <Content Include="Views\Home\APS_JUSTCARD.cshtml" />
+    <Content Include="Views\Home\APS_SETTING.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

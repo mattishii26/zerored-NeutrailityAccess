@@ -143,11 +143,18 @@
                     <li class="nav-item">
                         <a href="~/Home/About" class="first-level-link"><span class="ca-gov-icon-info-bubble" aria-hidden="true"></span>About</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item
+
+
+general
+Search
+
+LOAD MORE MESSAGES
+">
                         <a href="~/Home/Structure" class="first-level-link"><span class="ca-gov-icon-flowchart" aria-hidden="true"></span>AEIS</a>
                     </li>
                     <li class="nav-item">
-                        <a href="~/Home/Login" class="first-level-link"><span class="ca-gov-icon-person" aria-hidden="true"></span>Account Home</a>
+                        <a href="@Url.Action("AccountPageSuccess","Home")" class="first-level-link"><span class="ca-gov-icon-person" aria-hidden="true"></span>Account Home</a>
                     </li>
                     <li class="nav-item" id="nav-item-search">
                         <a href="javascript:;" class="first-level-link"><span class="ca-gov-icon-search" aria-hidden="true"></span>Search</a>
@@ -158,7 +165,25 @@
     </header>
     <div class="header-decoration"></div>
     <div id="main-content" class="main-content" style="position:relative;">
-        @RenderBody()
+        <div class="section">
+            <div class="sideBar">
+                <ul>
+                    <li><a href="@Url.Action("APS_AEIS","Home")">AEIS Test</li>
+                    <li><a href="@Url.Action("APS_JUSTCARD","Home")">Justification Card</a></li>
+                    <li><a href="@Url.Action("APS_Graph","Home")">Graphs</a></li>
+                    <li><a href="@Url.Action("APS_SETTING","Home")">Account Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="pageView">
+                @RenderBody()
+               
+            </div>
+
+        </div>
+        
+
+
         <div style="margin-bottom:5%;"></div>
 
     </div>

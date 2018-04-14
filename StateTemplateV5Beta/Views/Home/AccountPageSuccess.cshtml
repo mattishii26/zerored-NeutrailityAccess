@@ -5,24 +5,12 @@
 }
 
 <div class="section">
-    <div class="sideBar">
-        <ul>
-            <li><a href="#home">AEIS Test</a></li>
-            <li><a href="#news">Justification Card</a></li>
-            <li><a href="#contact">Graphs</a></li>
-            <li><a href="#contact">Account Settings</a></li>
-        </ul>
-
-    </div>
-
-    <div class="pageViewer">
-        <div class="dropDownMenu">
-
-        </div>
-        @{ 
-
-        }
+        
+    @{ 
+        <a>@Html.ActionLink("Home", "Index", "Home/APS_AEIS")</a>
+    }
         @{
+            @DateTime.Now;
             <p>
                 hello
             </p>

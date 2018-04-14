@@ -18,8 +18,12 @@ namespace StateTemplateV5Beta.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
 
-        public ActionResult Structure()
+        public ActionResult AEIS()
         {
             return View();
         }
@@ -35,6 +39,24 @@ namespace StateTemplateV5Beta.Controllers
         }
 
         public ActionResult AccountPageSuccess()
+        {
+
+            return View();
+        }
+
+        public ActionResult APS_AEIS()
+        {
+            return View();
+        }
+        public ActionResult APS_Graph()
+        {
+            return View();
+        }
+        public ActionResult APS_JUSTCARD()
+        {
+            return View();
+        }
+        public ActionResult APS_SETTING()
         {
             return View();
         }
