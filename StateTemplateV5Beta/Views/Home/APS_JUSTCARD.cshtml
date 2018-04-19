@@ -4,5 +4,178 @@
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
 
-<h2>APS_JUSTCARD</h2>
+<style>
 
+    .SC_Title {
+        text-align: center;
+    }
+
+    .TextField {
+        padding: 2px;
+    }
+
+    .Title {
+        background-color: #d2dbe5;
+        border-bottom: 1px solid black;
+        font-weight: bold;
+        padding: 2px;
+    }
+
+    .BoxEntry {
+        border: 1px solid black;
+        margin-bottom: 15px;
+    }
+
+    .doubleBox {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .AEIS_BreakDown {
+        display: inline-block;
+        float: left;
+        margin: 0cm 1.5cm 0.5cm 1cm;
+    }
+
+    .AEIS_BD_LEFT {
+        display: inline-block;
+        float: right;
+    }
+
+    .TestedSystem {
+        float: left;
+    }
+</style>
+<div class="SC_Title">
+    <h2>
+        AEIS Assessment for <select>
+            <option value="N/A">Load from Database</option>
+        </select>
+    </h2>
+</div>
+
+<div class="doubleBox">
+    <div class="AEIS_BreakDown">
+        <table border="1">
+            <div class="Title">AEIS Breakdown</div>
+            <tr>
+                <th>Public Services:</th>
+                <th>......</th>
+            </tr>
+            <tr>
+                <th>Internal Services:</th>
+                <th>......</th>
+            </tr>
+            <tr>
+                <th>Accessibility Testing:</th>
+                <th>......</th>
+            </tr>
+            <tr>
+                <th>System Life Span:</th>
+                <th>......</th>
+            </tr>
+        </table>
+    </div>
+    <div class="AEIS_BD_LEFT">
+        <div class="BoxEntry">
+            <div class="Title">System Description</div>
+            <div class="TextField">
+                Load from db.
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .justificationCard {
+    }
+
+    .secForm {
+        background-color: #d2dbe5;
+        width: 100%;
+        font-weight: bold;
+        padding-left: 2px;
+        border-bottom: 1px solid black;
+    }
+
+    #secText {
+        width: 100%;
+        height: 10%;
+        max-width: 100%;
+        min-height: 10%;
+        border: none;
+        outline: none;
+        margin-bottom: 2%;
+    }
+</style>
+
+@{
+    string[] sectionQuestions = new string[]
+    {
+"Services that the system provides to the general public:",
+"Impact of not having accesss to the system:",
+"Job functions that the system is required to complete:",
+"System has been tested previously:",
+"Identify accessibility issues that were not resolved and why:",
+"Why this system needs to be prioritized for an accessibility and usability assessment:"
+    };
+
+    if (IsPost)
+    {
+
+        string[] sectionAnswers = new string[]
+        {
+    Request["sec_1"], Request["sec_2"], Request["sec_3"],
+    Request["sec_4"], Request["sec_5"], Request["sec_6"]
+        };
+
+
+        var count = 1;
+        for (int i = 0; i < sectionQuestions.Length; i++)
+        {
+               
+            if (@sectionAnswers[i] == null)
+            {
+                <p>@sectionQuestions[i]</p>
+            }
+            else
+            {
+                <p>@sectionQuestions[i] @sectionAnswers[i]</p>
+            }
+
+        }
+
+        //Just reloads the page
+        <input type="submit" value="Reset" onclick="resetJustCard()">
+    }
+    else
+    {
+        <div class="justificationCard">
+            <form method="post">
+                <label class="secForm" for="sec1">@sectionQuestions[0]</label>
+                <textarea id="secText" name="sec_1" placeholder="Enter Opinion..."></textarea>
+                <label class="secForm" for="sec2">@sectionQuestions[1]</label>
+                <textarea id="secText" name="sec_2" placeholder="Enter Opinion..."></textarea>
+                <label class="secForm" for="sec3">@sectionQuestions[2]</label>
+                <textarea id="secText" name="sec_3" placeholder="Enter Opinion..."></textarea>
+                <label class="secForm" for="sec4">@sectionQuestions[3]</label>
+                <select id="secText" name="sec_4">
+                    <option value="N/A">Select Yes or No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <label class="secForm" for="sec5">@sectionQuestions[4]</label>
+                <textarea id="secText" name="sec_5" placeholder="Enter Opinion..."></textarea>
+                <label class="secForm" for="sec6">@sectionQuestions[5]</label>
+                <textarea id="secText" name="sec_6" placeholder="Enter Opinion..."></textarea>
+                <input type="submit" value="Submit" class="submit">
+            </form>
+
+        </div>
+    }
+}
+
+<script type="text/javascript">
+    function resetJustCard() {
+        window.location = "APS_JUSTCARD";
+    }
+</script>

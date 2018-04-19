@@ -4,5 +4,47 @@
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
 
-<h2>APS_SETTING</h2>
+<style>
 
+    .AEIS_SETTING_Title {
+        text-align: left;
+        color: #2F77A0;
+    }
+
+</style> 
+
+<script type="text/javascript">
+    function alertLength() {
+        alert(document.getElementById("password1").maxLength)
+    }
+
+
+</script>
+
+
+<div class="AEIS_SETTING_Password_Setting">
+    <div class="AEIS_SETTING_Title">
+        <h3>Password</h3>
+    </div>
+    <div class="AEIS_SETTING_BoxEntry">
+        You can update your password here.
+        The maximal length of the password is 12.
+    </div>
+    <form name="form1" method="post" action="">
+        Old Password:
+        <br>
+        <input type="password" id="password1" maxLength="12" name="pass" />
+        <br />
+
+        New Password:
+        <br>
+        <input type="password" id="password1" maxLength="12" name="pwd1" />
+        <br />
+        Confirm Password:
+        <br>
+        <input type="password" id="password1" maxLength="12" name="pwd2" onchange="checkpwd()" />
+        <div id="msg" style="color:red;"></div>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
