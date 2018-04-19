@@ -4,16 +4,16 @@
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
 
-<div class="section">
-        
-    @{ 
+
+
+    @{
         <a>@Html.ActionLink("Home", "Index", "Home/APS_AEIS")</a>
     }
-        @{
-            @DateTime.Now;
-            <p>
-                hello
-            </p>
+    @{
+        @DateTime.Now;
+        <p>
+            hello
+        </p>
         if (IsPost)
         {
             string companyname = Request["CompanyName"];
@@ -24,18 +24,16 @@
                 Contact Name: @contactname
             </p>
             <input type="submit" value="Reset" class="submit">
-    }
-    else
-    {
-        <form method="post" action="">
-            Company Name:<br>
-            <input type="text" name="CompanyName" value=""><br>
-            Contact Name:<br><br>
-            <input type="text" name="ContactName" value=""><br><br>
-            <input type="submit" value="Submit" class="submit">
-        </form>
-}
         }
-
-    </div>
-</div>
+        else
+        {
+            <form method="post" action="">
+                Company Name:<br>
+                <input type="text" name="CompanyName" value=""><br>
+                Contact Name:<br><br>
+                <input type="text" name="ContactName" value=""><br><br>
+                <input type="submit" value="Submit" class="submit">
+            </form>
+            }
+        }
+}

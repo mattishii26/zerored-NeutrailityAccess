@@ -415,6 +415,8 @@
     <Content Include="Views\Home\APS_Graph.cshtml" />
     <Content Include="Views\Home\APS_JUSTCARD.cshtml" />
     <Content Include="Views\Home\APS_SETTING.cshtml" />
+    <None Include="Views\Home\Home_Login.cshtml" />
+    <Content Include="Views\Home\Home_Reg.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,3 +4,28 @@
 }
 <h2>APS_Graph</h2>
 
+
+<div id="selectMenu">
+    <select id="mySelect" onchange="myFunction()">
+        <option value="Take Test">Take Test</option>
+        <option value="Save Test">Save Test</option>
+        <option value="Load Test">Load Test</option>
+    </select>
+</div>
+<div id="pageViewer-Select"></div>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("mySelect").value;
+        document.getElementById("pageViewer-Select").innerHTML = "You selected: " + x;
+    }
+</script>
+
+<h2>APS_AEIS</h2>
+
+<h2>
+    @for (int i = 0; i < 5; i++)
+    {
+        <p>@i  Under Construction...</p>
+    }
+</h2>

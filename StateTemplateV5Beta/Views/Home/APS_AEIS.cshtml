@@ -5,26 +5,331 @@
 
 }
 
+<style>
 
-<div id="selectMenu">
-    <select id="mySelect" onchange="myFunction()">
-        <option value="Take Test">Take Test</option>
-        <option value="Save Test">Save Test</option>
-        <option value="Load Test">Load Test</option>
-    </select>
-</div>
-<div id="pageViewer-Select"></div>
-
-<script>
-    function myFunction() {
-        var x = document.getElementById("mySelect").value;
-        document.getElementById("pageViewer-Select").innerHTML = "You selected: " + x;
+    table#t1 {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin: 5%;
     }
-</script>
 
-<h2>APS_AEIS</h2>
+    table#t1 th {
+        background: black;
+    }
 
-<h2>@for (int i = 0; i < 5; i++)
-{
-    <p>@i  hello</p>
-}</h2>
+    table#t1 td {
+        background: white;
+        border: 1px solid black;
+    }
+
+    .columnheadertext {
+        color: white;
+        font-size: 150%;
+    }
+
+    .sectiontextbox {
+        background-color: grey;
+    }
+
+    .sectiontext {
+        text-align: left;
+        color: black;
+        font-size: 125%;
+        font-weight: bold;
+        padding-left: 5px;
+        line-height: 2;
+    }
+
+    .question {
+        background-color: white;
+    }
+
+    .questiontext {
+        color: black;
+    }
+</style>
+<html>
+<body>
+    <form>
+        <div style="text-align:center;">
+            <input type="reset" value="Clear Form">
+            <input type="button" value="Load Form">
+            <select></select>
+        </div>
+        <table id="t1">
+            <col width=40%>
+            <col width=10%>
+            <col width=40%>
+            <tr>
+                <th>
+                    <div class="columnheadertext">
+                        QUESTION
+                    </div>
+                </th>
+                <th>
+                    <div class="columnheadertext">
+                        YES/NO
+                    </div>
+                </th>
+                <th>
+                    <div class="columnheadertext">
+                        DESCRIPTION
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="sectiontextbox">
+                        <div class="sectiontext">
+                            Public Services
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="questiontext">
+                        <p>- Does the system provide a service that is essential to the general public?</p>
+                    </div>
+                </td>
+                <td align="center">
+                    <div>
+                        <input type="radio" id="q1yes" name="q[0]" value=1>
+                        <label for="q1yes">
+                            YES
+                        </label>
+                        <input type="radio" id="q1no" name="q[0]" value=0>
+                        <label for="q1no">
+                            NO
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="questiontext">
+                        <p>Essential Services: Services that the general public MUST have access to.</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="questiontext">
+                        <p>- Are citizens required to use the systems to gain access to a service?</p>
+                    </div>
+                </td>
+                <td align="center">
+                    <div>
+                        <input type="radio" id="q2yes" name="q[1]" value=1>
+                        <label for="q2yes">
+                            YES
+                        </label>
+                        <input type="radio" id="q2no" name="q[1]" value=0>
+                        <label for="q2no">
+                            NO
+                        </label>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="questiontext">
+                        <p>- Is the system the only, or most efficient option for accessing the public service or information in a timely manner?</p>
+                    </div>
+                </td>
+                <td align="center">
+                    <div>
+                        <input type="radio" id="q3yes" name="q[2]" value=1>
+                        <label for="q3yes">
+                            YES
+                        </label>
+                        <input type="radio" id="q3no" name="q[2]" value=0>
+                        <label for="q3no">
+                            NO
+                        </label>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="questiontext">
+                        <p>- If a citizen is unable to use the service that the system provides, does it prevent or reduce access to another service (i.e travel, healthcare, etc.)?</p>
+                    </div>
+                </td>
+                <td align="center">
+                    <div>
+                        <input type="radio" id="q4yes" name="q[3]" value=1>
+                        <label for="q4yes">
+                            YES
+                        </label>
+                        <input type="radio" id="q4no" name="q[3]" value=0>
+                        <label for="q4no">
+                            NO
+                        </label>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="sectiontextbox">
+                        <div class="sectiontext">
+                            Internal Services
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="questiontext">
+                        <p>- In addition to internal staff, are employees from other state departments required to use or interface with the system?</p>
+                    </div>
+                </td>
+                <td align="center">
+                    <div>
+                        <input type="radio" id="q5yes" name="q[4]" value=1>
+                        <label for="q5yes">
+                            YES
+                        </label>
+                        <input type="radio" id="q5no" name="q[4]" value=0>
+                        <label for="q5no">
+                            NO
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="questiontext">
+                        <p>Example: FI$CAL requires that other state employees use this system.</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="questiontext">
+                        <p>- Would accessibility issues prevent an employee from performing essential job functions?</p>
+                    </div>
+                </td>
+                <td align="center">
+                    <div>
+                        <input type="radio" id="q6yes" name="q[5]" value=1>
+                        <label for="q6yes">
+                            YES
+                        </label>
+                        <input type="radio" id="q6no" name="q[5]" value=0>
+                        <label for="q6no">
+                            NO
+                        </label>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="sectiontextbox">
+                        <div class="sectiontext">
+                            Accessibility Testing
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="questiontext">
+                        <p>- Has the system been tested for accessibility since the last major release?</p>
+                    </div>
+                </td>
+                <td align="center">
+                    <div>
+                        <input type="radio" id="q7yes" name="q[6]" value=1>
+                        <label for="q7yes">
+                            YES
+                        </label>
+                        <input type="radio" id="q7no" name="q[6]" value=0>
+                        <label for="q7no">
+                            NO
+                        </label>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="questiontext">
+                        <p>- If so, were any findings of accessibility issues not addressed?</p>
+                    </div>
+                </td>
+                <td align="center">
+                    <div>
+                        <input type="radio" id="q8yes" name="q[7]" value=1>
+                        <label for="q8yes">
+                            YES
+                        </label>
+                        <input type="radio" id="q8no" name="q[7]" value=0>
+                        <label for="q8no">
+                            NO
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="questiontext">
+                        <p>Answer "NO" if previous answer was "NO".</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="sectiontextbox">
+                        <div class="sectiontext">
+                            System Life Span
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="questiontext">
+                        <p>- Are there plans for the system to be retired or replaced?</p>
+                    </div>
+                </td>
+                <td align="center">
+                    <div>
+                        <input type="radio" id="q9yes" name="q[8]" value=1>
+                        <label for="q9yes">
+                            YES
+                        </label>
+                        <input type="radio" id="q9no" name="q[8]" value=0>
+                        <label for="q9no">
+                            NO
+                        </label>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="questiontext">
+                        <p>- Is there a State or Federal mandate that requires this system or an equivalent system to be readily available?</p>
+                    </div>
+                </td>
+                <td align="center">
+                    <div>
+                        <input type="radio" id="q8yes" name="q[9]" value=1>
+                        <label for="q10yes">
+                            YES
+                        </label>
+                        <input type="radio" id="q8no" name="q[9]" value=0>
+                        <label for="q10no">
+                            NO
+                        </label>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+        <div style="text-align:right;">
+            <input type="button" value="Save">
+            <input type="text" name="testname">
+        </div>
+    </form>
+</body>
+</html>

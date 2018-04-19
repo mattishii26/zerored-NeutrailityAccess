@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Home_Reg";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2 class="text-center">Account Registration</h2>
+    <div class="row p-b-lg" style="overflow:hidden;">
+
+        <div id="popupReg" class="offset-quarter half">
+            <section id="loginForm" class="section-understated p-a-lg shadow">
+                <!--Form states-->
+                <div id="email-box" class="form-group m-b-md">
+                    <div class="input-group">
+                        <div class="input-group-addon d-flex">
+                            <i class="ca-gov-icon-person"></i>
+                        </div>
+                        <input id="emailPopup" onkeyup="emailChecker()" name="userEmail" class="form-control" type="text" placeholder="Enter Your Email">
+                    </div>
+                    <div class="input-group m-t-md">
+                        <div class="input-group-addon d-flex">
+                            <i class="ca-gov-icon-key"></i>
+                        </div>
+                        <input id="passwordPopup" onkeyup="passwordChecker()" name="userPassword" class="form-control" type="password" placeholder="Enter Your Password">
+                    </div>
+                    <div class="input-group m-t-md">
+                        <div class="input-group-addon d-flex">
+                            <i class="ca-gov-icon-key"></i>
+                        </div>
+                        <input id="passwordCheckPopup" onkeyup="passwordChecker()" name="userPassword" class="form-control" type="password" placeholder="Re-enter Your Password">
+                    </div>
+
+                    <small id="email-feedback" class="feedback" style="display:none">Email not registered, please register to continue.</small>
+                </div>
+                <div class="row">
+
+                </div>
+                <div class="row m-t-md m-b-md text-center">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <input type="submit" value="Register" class="btn btn-lg btn-primary full-width" onclick="reg_check_empty()">
+                    </div>
+                </div>
+                <div class="row m-t-md text-center">
+                    <small>Have an Account?</small>
+                </div>
+                <div class="row m-t text-center">
+                    <a href="@Url.Action("Home_Login", "Home" )" class="btn btn-default">Login</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        // Validating Empty Field
+        function reg_check_empty() {
+            if (document.getElementById('emailPopup').value == "" || document.getElementById('passwordPopup').value == "" || document.getElementById('passwordCheckPopup').value == "") {
+                alert("Fill All Fields !");
+            } else {
+                alert("Account being created...");
+
+            }
+        }
+
+        function emailChecker() {
+            var email1 = document.getElementById('emailPopup');
+            var temp = email1.value;
+            if (temp ==null) {
+                email.style.borderColor = "#ccc";
+            }else if(!temp.endsWith(".com")) {
+                email1.style.borderColor = "red";
+            } else if(temp.endsWith(".com")) {
+                email1.style.borderColor = "green";
+            }
+        }
+
+        function passwordChecker() {
+            var pass1 = document.getElementById('passwordPopup');
+            var pass2 = document.getElementById('passwordCheckPopup');
+
+            if (pass2.value == "" || pass1.value == "") {
+
+            } else if (pass1.value != pass2.value) {
+                pass2.style.borderColor = "red";
+
+            } else {
+                pass1.style.borderColor = "green";
+                pass2.style.borderColor = "green";
+            }
+        }
+    </script>

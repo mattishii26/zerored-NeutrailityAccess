@@ -18,10 +18,6 @@ namespace StateTemplateV5Beta.Controllers
             return View();
         }
 
-        public ActionResult Login()
-        {
-            return View();
-        }
 
         public ActionResult AEIS()
         {
@@ -60,5 +56,15 @@ namespace StateTemplateV5Beta.Controllers
         {
             return View();
         }
+
+        public ActionResult Home_Login()
+        {
+            return View();
+        }
+        public ActionResult Home_Reg()
+        {
+            return View();
+        }
+
     }
 }
