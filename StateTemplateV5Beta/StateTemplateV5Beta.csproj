@@ -159,6 +159,7 @@
     <Content Include="Content\StateTemplate\images\Ca-Gov-Logo-Gold.svg" />
     <Content Include="Content\StateTemplate\images\Ca-Gov-Logo-White.svg" />
     <Content Include="Content\StateTemplate\images\ca-logo.png" />
+    <Content Include="Content\StateTemplate\images\DOR-Web-Logo.png" />
     <Content Include="Content\StateTemplate\images\fancybox\blank.gif" />
     <Content Include="Content\StateTemplate\images\fancybox\fancybox_loading%402x.gif" />
     <Content Include="Content\StateTemplate\images\fancybox\fancybox_loading.gif" />
@@ -409,12 +410,12 @@
     <Content Include="Views\Home\serp.cshtml" />
     <Content Include="Views\Home\AccountPageSuccess.cshtml" />
     <Content Include="Site1.Master" />
-    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_AccountLayout.cshtml" />
     <Content Include="Views\Home\APS_AEIS.cshtml" />
     <Content Include="Views\Home\APS_Graph.cshtml" />
     <Content Include="Views\Home\APS_JUSTCARD.cshtml" />
     <Content Include="Views\Home\APS_SETTING.cshtml" />
+    <Content Include="Views\Home\About_StrategicPlanSurvey.cshtml" />
     <None Include="Views\Home\Home_Login.cshtml" />
     <Content Include="Views\Home\Home_Reg.cshtml" />
   </ItemGroup>

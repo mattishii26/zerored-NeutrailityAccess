@@ -28,6 +28,11 @@ namespace StateTemplateV5Beta.Controllers
         {
             return View();
         }
+        
+        public ActionResult About_StrategicPlanSurvey()
+        {
+            return View();
+        }
 
         public ActionResult serp()
         {

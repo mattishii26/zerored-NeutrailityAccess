@@ -80,13 +80,14 @@
                 <div class="group">
                     <div class="half">
                         <ul class="utility-links social-media-links">
-                            <li><div class="header-cagov-logo"><a href="/"><img src="/Content/stateTemplate/images/Ca-Gov-Logo-Gold.svg" alt="CA.gov" /></a></div></li>
-                            <li><a href="/"><span class="ca-gov-icon-home" aria-hidden="true"></span><span class="sr-only">Home</span></a></li>
+                            <li><div class="header-cagov-logo"><a href="@Url.Action("AccountPageSuccess","Home")"><img src="/Content/stateTemplate/images/Ca-Gov-Logo-Gold.svg" alt="CA.gov"/></a></div></li>
+                            <li><a href="@Url.Action("AccountPageSuccess","Home")"><span class="ca-gov-icon-home" aria-hidden="true"></span><span class="sr-only">Home</span></a></li>
                         </ul>
                     </div>
                     <div class="half settings-links">
                         <ul class="utility-links ">
-                            <li><a role="button" data-toggle="collapse" href="#siteSettings" aria-expanded="false" aria-controls="siteSettings"><span class="ca-gov-icon-gear" aria-hidden="true"></span> Settings</a></li>
+                            <li><a role="button" data-toggle="collapse" href="#siteSettings" aria-expanded="false" aria-controls="siteSettings"><span class="ca-gov-icon-gear" aria-hidden="true"></span> Page Settings</a></li>
+                            <li><a role="button" href="@Url.Action("Index","Home")" onclick="alert('Logging out...');"><span class="ca-gov-icon-close-mark"></span> Logout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -111,7 +112,12 @@
 
         <!-- Branding -->
         <div class="branding">
-            <div class="header-organization-banner"><a href="/"><img src="/Content/stateTemplate/images/template-logo.png" alt="Organization Title" /></a></div>
+            <div class="header-organization-banner">
+                <a href="@Url.Action("AccountPageSuccess","Home")">
+                    <img src="/Content/stateTemplate/images/DOR-Web-Logo.png" alt="Organization Title" 
+                         style="-webkit-filter: invert(0);"/>
+                </a>
+            </div>
         </div>
 
         <!-- mobile navigation controls -->
@@ -138,20 +144,21 @@
             <nav id="navigation" class="main-navigation singlelevelnav auto-highlight">
                 <ul id="nav_list" class="top-level-nav">
                     <li class="home-link nav-item">
-                        <a href="/" class="first-level-link"><span id="nav_home_container" class="ca-gov-icon-home" aria-hidden="true"></span>Home</a>
+                        <a href="@Url.Action("AccountPageSuccess","Home")" class="first-level-link"><span id="nav_home_container" class="ca-gov-icon-home" aria-hidden="true"></span>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="~/Home/About" class="first-level-link"><span class="ca-gov-icon-info-bubble" aria-hidden="true"></span>About</a>
+                        <a href="@Url.Action("APS_AEIS","Home")" class="first-level-link"><span class="ca-gov-icon-pencil-edit" aria-hidden="true"></span>AEIS Test</a>
                     </li>
                     <li class="nav-item">
-                        <a href="~/Home/AEIS" class="first-level-link"><span class="ca-gov-icon-flowchart" aria-hidden="true"></span>AEIS</a>
+                        <a href="@Url.Action("APS_JUSTCARD","Home")" class="first-level-link"><span class="ca-gov-icon-document" aria-hidden="true"></span>Justification Card</a>
                     </li>
                     <li class="nav-item">
-                        <a href="@Url.Action("AccountPageSuccess","Home")" class="first-level-link"><span class="ca-gov-icon-person" aria-hidden="true"></span>Account Home</a>
+                        <a href="@Url.Action("APS_Graph","Home")" class="first-level-link"><span class="ca-gov-icon-bar-chart" aria-hidden="true"></span>Graphs</a>
                     </li>
-                    <li class="nav-item" id="nav-item-search">
-                        <a href="javascript:;" class="first-level-link"><span class="ca-gov-icon-search" aria-hidden="true"></span>Search</a>
+                    <li class="nav-item">
+                        <a href="@Url.Action("APS_SETTING","Home")" class="first-level-link"><span class="ca-gov-icon-gears" aria-hidden="true"></span>Account Settings</a>
                     </li>
+
                 </ul>
             </nav>
         </div>
@@ -159,19 +166,7 @@
     <div class="header-decoration"></div>
     <div id="main-content" class="main-content" style="position:relative;">
         <div class="section">
-            <div class="sideBar">
-                <ul>
-                    <li><a href="@Url.Action("APS_AEIS","Home")">AEIS Test</li>
-                    <li><a href="@Url.Action("APS_JUSTCARD","Home")">Justification Card</a></li>
-                    <li><a href="@Url.Action("APS_Graph","Home")">Graphs</a></li>
-                    <li><a href="@Url.Action("APS_SETTING","Home")">Account Settings</a></li>
-                </ul>
-            </div>
-
-            <div class="pageView">
                 @RenderBody()
-               
-            </div>
 
         </div>
         

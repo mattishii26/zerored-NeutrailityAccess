@@ -4,36 +4,104 @@
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
 
+@{
+    /*Pseudo Code for Home page login*/
 
+    /*
+        //Welcome
+        Hello Again @userName!
 
+        //Test Table
+        Check how many tests the user has taken, from DB
+        If zero,
+            alert the user to take a test
+        Else,
+            Populate a Table with the database
+
+     */
+
+    /* Test Table Mock up
     @{
-        <a>@Html.ActionLink("Home", "Index", "Home/APS_AEIS")</a>
-    }
-    @{
-        @DateTime.Now;
+        if( DBMS Count = 0){
         <p>
-            hello
+            <div class="row m-t text-center">
+                <h3>Please Take AEIS Test!</h3>
+                <a href="@Url.Action("APS_AEIS", "Home" )" class="btn btn-default">Take the Test</a>
+            </div>
         </p>
-        if (IsPost)
+        }else{
+            <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+        <table>
+            <tr>
+                <th></th>
+                <th>Company</th>
+                <th>Date Taken</th>
+            </tr>
+        <% foreach (var item in Model) { %>
+            <tr>
+                <td><%= Html.ActionLink("Edit", "Edit", new { id=item.Id }) %> |<%= Html.ActionLink("Details", "Details", new { id=item.Id })%></td>
+                <td><%= Html.Encode(item.CompanyName) %></td>
+                <td><%= Html.Encode(String.Format("{0:g}", item.DateTaken)) %></td>
+        </tr>
+
+        <% } %>
+
+        </table>
+
+        <p>
+
+            <%= Html.ActionLink("Add Another", "APS_AEIS") %>
+
+        </p>
+
+    </asp:Content>
+
+        }
+    }
+     */
+
+}
+
+
+
+
+@{
+    @DateTime.Now;
+    <p>
+        hello
+    </p>
+    if (IsPost)
+    {
+
+        string companyname = Request["CompanyName"];
+        string contactname = Request["ContactName"];
+        if (companyname == "hello")
         {
-            string companyname = Request["CompanyName"];
-            string contactname = Request["ContactName"];
             <p>
                 You entered: <br>
                 Company Name: @companyname <br>
                 Contact Name: @contactname
             </p>
-            <input type="submit" value="Reset" class="submit">
         }
         else
         {
-            <form method="post" action="">
-                Company Name:<br>
-                <input type="text" name="CompanyName" value=""><br>
-                Contact Name:<br><br>
-                <input type="text" name="ContactName" value=""><br><br>
-                <input type="submit" value="Submit" class="submit">
-            </form>
-            }
+            <p>
+                <div class="row m-t text-center">
+                    <h3>Please Take AEIS Test!</h3>
+                    <a href="@Url.Action("APS_AEIS", "Home" )" class="btn btn-default">Take the Test</a>
+                </div>
+            </p>
         }
+    }
+    else
+    {
+        <form method="post" action="">
+            Company Name:<br>
+            <input type="text" name="CompanyName" value=""><br>
+            Contact Name:<br><br>
+            <input type="text" name="ContactName" value=""><br><br>
+            <input type="submit" value="Submit" class="submit">
+        </form>
+    }
 }
+
